@@ -1,3 +1,20 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
+<a [routerLink]="''"
+    [routerLinkActive]="'active-navlink'"
+    [routerLinkActiveOptions]="{exact:true}">Default</a>
+<a [routerLink]="['article', { listData: 'foo' }]"
+     [routerLinkActive]="'active-navlink'"
+     [routerLinkActiveOptions]="{exact:true}">Article</a>
+
+<button [routerLink]="''">Default</button>
+<button [routerLink]="'article'">Article</button>
+
+<a [routerLink]="[defaultPath]">Default</a>
+<a [routerLink]="[articlePath]">Article</a>
+
+<button (click)="visitDefault()">Default</button>
+<button (click)="visitArticle()">Article</button>
+
+<router-outlet></router-outlet>
